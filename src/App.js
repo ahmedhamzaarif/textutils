@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import logo from './logo.svg';
+// import logo from './images/logo-blue.png';
+import logoBlue from './images/logo-blue.png'
+import logoWhite from './images/logo-white.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './App.css';
@@ -43,8 +45,9 @@ function App({mode , setMode}) {
   }
   return (
     <>
+      <Header logoBlue={logoBlue} logoWhite={logoWhite} title={"TexUtils"} theme={mode} toggleMode={toggleMode} toggleButton={toggleButton}/>
+      <div id='headerOffset' style={{height:'75px'}}></div>
       <Alert alert={alert}/>
-      <Header logo={logo} title={"TexUtils"} theme={mode} toggleMode={toggleMode} toggleButton={toggleButton}/>
       <main id='main' className="container py-5">
         <Outlet/>
       </main>

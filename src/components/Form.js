@@ -48,7 +48,7 @@ export default function TextForm(props) {
                         {/* Words: {text.length === 0 ? 0: text.split(' ').length} */}
                         Words: {text.split(' ').filter((element)=>{return element.length!==0}).length}
                     </button>
-                    <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{0.008 * text.split(" ").length} minutes read</button>
+                    <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes read</button>
                 </span>
             </div>
             <div className="p-3 my-3" style={{backgroundColor: props.theme==='dark'?'#252525':'white', border: props.theme==='dark'?'1px solid #252525':'1px solid #ced4da'}}>
