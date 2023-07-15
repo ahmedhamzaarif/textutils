@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
 body{font-family: 'Nunito', sans-serif}
-
+#main{min-height: 76vh;}
 .logo {
   height: 80px;
   animation: spin infinite 20s linear;
