@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import Form from './components/Form';
-
+import Faq from "./components/Faq";
 
 function App({mode , setMode}) {
   const [toggleButton, setToggleButton] = useState('🌙')
@@ -20,7 +20,8 @@ function App({mode , setMode}) {
 
   return (
     <>
-        <Form showAlert={showAlert} mode={mode} setMode={setMode} heading='Enter your text here to analyze' theme={mode}/>
+      <Form showAlert={showAlert} mode={mode} setMode={setMode} heading='Enter your text here to analyze' theme={mode}/>
+      <Faq heading="Why use TextUtils"/>
     </>
   );
 }

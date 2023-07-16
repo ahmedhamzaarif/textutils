@@ -4,7 +4,6 @@ import Faq from './Faq'
 export default function About() {
   return (
     <>
-    <Faq/>
     </>
   )
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function Faq() {
+export default function Faq(props) {
   return (
-    <>
-    <div className="display-4 text-center mb-4">FAQs</div>
+    <div className='py-5'>
+    <div className="display-4 text-center mb-4">{props.heading}</div>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Analyze Your Text
+                <strong>Analyze Your Text</strong>
             </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -20,7 +20,7 @@ export default function Faq() {
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Free to use
+                <strong>Free to use</strong>
             </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -32,7 +32,7 @@ export default function Faq() {
         <div class="accordion-item">
             <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Browser Compatible
+                <strong>Browser Compatible</strong>
             </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -42,6 +42,6 @@ export default function Faq() {
             </div>
         </div>
     </div>
-    </>
+    </div>
   )
 }
