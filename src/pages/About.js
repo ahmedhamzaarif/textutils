@@ -4,7 +4,7 @@ import Faq from '../components/Faq'
 export default function About(props) {
   return (
     <>
-      <Faq heading="Why use TextUtils" theme={props} />
+      <Faq heading="Why use TextUtils" theme={props.mode} />
     </>
   )
 }

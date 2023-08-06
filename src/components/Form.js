@@ -15,10 +15,7 @@ export default function TextForm(props) {
         props.showAlert("Text Cleared!", "success")
     }
     const handleCopy = () => {
-        var newText = document.getElementById('myText')
-        newText.select();
-        navigator.clipboard.writeText(newText.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.showAlert("Copied to clipboard!", "success")
     }
     const handleSpace = () => {
@@ -45,11 +42,9 @@ export default function TextForm(props) {
                 <span id="btn-group" className="col-md-8 d-flex justify-content-end">
                     <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>Characters: {text.length}</button>
                     <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>
-                        {/* Words: {text.split(' ').length} */}
-                        {/* Words: {text.length === 0 ? 0: text.split(' ').length} */}
-                        Words: {text.split(' ').filter((element)=>{return element.length!==0}).length}
+                        Words: {text.split(/\s+/).filter((element)=>{return element.length!==0}).length}
                     </button>
-                    <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{(0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length).toFixed(2)} minutes read</button>
+                    <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{(0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length).toFixed(2)} minutes read</button>
                 </span>
             </div>
             <div className="p-3 my-3" style={{backgroundColor: props.theme==='dark'?'#252525':'white', border: props.theme==='dark'?'1px solid #252525':'1px solid #ced4da'}}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-// import logo from './images/logo-blue.png';
 import logoBlue from './images/logo-blue.png'
 import logoWhite from './images/logo-white.png'
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,8 +11,6 @@ import Footer from './components/Footer';
 import Alert from './components/Alert';
 
 function App({mode , setMode}) {
-  
-  const [toggleButton, setToggleButton] = useState('🌙')
   const [alert, setAlert] = useState(null)
 
   const showAlert =  (message, type)=>{
@@ -29,13 +26,11 @@ function App({mode , setMode}) {
   const toggleMode = () => {
     if (mode === 'light'){
       setMode('dark')
-      setToggleButton('🌞')
       document.body.style.backgroundColor = '#212529'
       document.body.style.color = '#fff'
       showAlert("Dark mode has been enabled.", "success")
     } else {
       setMode('light')
-      setToggleButton('🌙')
       document.body.style.backgroundColor = '#fff'
       document.body.style.color = '#333'
       showAlert("Light mode has been enabled.", "success")
@@ -44,7 +39,7 @@ function App({mode , setMode}) {
   }
   return (
     <>
-      <Header logoBlue={logoBlue} logoWhite={logoWhite} title={"TexUtils"} theme={mode} toggleMode={toggleMode} toggleButton={toggleButton}/>
+      <Header logoBlue={logoBlue} logoWhite={logoWhite} title={"TexUtils"} theme={mode} toggleMode={toggleMode}/>
       <div id='headerOffset' style={{height:'75px'}}></div>
       <Alert alert={alert}/>
       <main id='main' className="container py-5">
