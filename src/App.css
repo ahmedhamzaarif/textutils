@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
 body{font-family: 'Nunito', sans-serif}
+header{z-index:10}
 #main{min-height: 80vh;}
+.navbar-dark{background-color: #2b3035 !important;}
 .form-control{box-shadow: none !important;}
 .logo {
   height: 50px;
@@ -19,3 +21,16 @@ to {transform: rotate(360deg)}
 .theme-switch .slider:before{position:absolute;content:"";height:var(--size-of-icon,1.4rem);width:var(--size-of-icon,1.4rem);border-radius:20px;left:var(--slider-offset,0.3rem);top:50%;transform:translateY(-50%);background:linear-gradient(40deg,#ff0080,#ff8c00 70%);transition:.4s}
 .theme-switch input:checked + .slider{background-color:#404040}
 .theme-switch input:checked + .slider:before{left:calc(100% - (var(--size-of-icon,1.4rem) + var(--slider-offset,0.3rem)));background:#303136;box-shadow:inset -3px -2px 5px -2px #8983f7,inset -10px -4px 0 0 #a3dafb}
+
+#faqAccordion.dark,
+#faqAccordion.dark .accordion-button.collapsed,
+#faqAccordion.dark .accordion-item{
+  background-color: #212529;
+  color:#fff;
+  border-color: #555;
+}
+#faqAccordion.dark .accordion-button:not(.collapsed){
+    color: rgb(110, 168, 254);
+    background-color: rgb(3, 22, 51);
+    box-shadow: rgb(73, 80, 87) 0px -1px 0px 0px inset;
+}

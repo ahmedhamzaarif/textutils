@@ -17,7 +17,8 @@ export default function TextForm(props) {
     const handleCopy = () => {
         var newText = document.getElementById('myText')
         newText.select();
-        navigator.clipboard.writeText(newText.value)
+        navigator.clipboard.writeText(newText.value);
+        document.getSelection().removeAllRanges();
         props.showAlert("Copied to clipboard!", "success")
     }
     const handleSpace = () => {
@@ -27,15 +28,15 @@ export default function TextForm(props) {
     }
     
     return(
-        <div id="form" style={{color: props.theme==='dark'?'white':'#353535', backgroundColor: props.theme==='dark'?'#353535':'white'}}>
+        <div id="form" style={{color: props.theme==='dark'?'white':'#212529', backgroundColor: props.theme==='dark'?'#212529':'white'}}>
             <h2 className="text-capitalize mb-3">{props.heading}</h2>
-            <textarea id="myText" className="form-control my-3" rows='8' value={text} onChange={(e)=> setText(e.target.value)} placeholder="Enter your text here" style={{color: props.theme==='dark'?'white':'#252525', backgroundColor: props.theme==='dark'?'#252525':'white', borderColor: props.theme==='dark'?'#252525':'#ced4da'}}></textarea>
+            <textarea id="myText" className="form-control my-3" rows='8' value={text} onChange={(e)=> setText(e.target.value)} placeholder="Enter your text here" style={{color: props.theme==='dark'?'white':'#2b3035', backgroundColor: props.theme==='dark'?'#2b3035':'white', borderColor: props.theme==='dark'?'#252525':'#ced4da'}}></textarea>
             <div className="mb-3">
-                <button className="btn btn-info me-2 mb-1" onClick={(handleUpClick)}>Convert to UpperCase</button>
-                <button className="btn btn-info me-2 mb-1" onClick={handleLowClick}>Convert to LowerCase</button>
-                <button className="btn btn-info me-2 mb-1" onClick={handleSpace}>Remove Extra Spaces</button>
-                <button className="btn btn-info me-2 mb-1" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-danger me-2 mb-1" onClick={handleClearClick}>Clear</button>
+                <button disabled={text.length===0} className="btn btn-info me-2 mb-1" onClick={(handleUpClick)}>Convert to UpperCase</button>
+                <button disabled={text.length===0} className="btn btn-info me-2 mb-1" onClick={handleLowClick}>Convert to LowerCase</button>
+                <button disabled={text.length===0} className="btn btn-info me-2 mb-1" onClick={handleSpace}>Remove Extra Spaces</button>
+                <button disabled={text.length===0} className="btn btn-info me-2 mb-1" onClick={handleCopy}>Copy Text</button>
+                <button disabled={text.length===0} className="btn btn-danger me-2 mb-1" onClick={handleClearClick}>Clear</button>
             </div>
             <div className="row justify-content-between align-items-center">
                 <span className="col-md-4">
@@ -48,7 +49,7 @@ export default function TextForm(props) {
                         {/* Words: {text.length === 0 ? 0: text.split(' ').length} */}
                         Words: {text.split(' ').filter((element)=>{return element.length!==0}).length}
                     </button>
-                    <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes read</button>
+                    <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{(0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length).toFixed(2)} minutes read</button>
                 </span>
             </div>
             <div className="p-3 my-3" style={{backgroundColor: props.theme==='dark'?'#252525':'white', border: props.theme==='dark'?'1px solid #252525':'1px solid #ced4da'}}>

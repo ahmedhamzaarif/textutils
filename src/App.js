@@ -6,7 +6,6 @@ import logoBlue from './images/logo-blue.png'
 import logoWhite from './images/logo-white.png'
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import './App.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -31,7 +30,7 @@ function App({mode , setMode}) {
     if (mode === 'light'){
       setMode('dark')
       setToggleButton('🌞')
-      document.body.style.backgroundColor = '#353535'
+      document.body.style.backgroundColor = '#212529'
       document.body.style.color = '#fff'
       showAlert("Dark mode has been enabled.", "success")
     } else {
