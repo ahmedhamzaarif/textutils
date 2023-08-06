@@ -43,7 +43,7 @@ function App({mode , setMode}) {
       <div id='headerOffset' style={{height:'75px'}}></div>
       <Alert alert={alert}/>
       <main id='main' className="container py-5">
-        <Outlet/>
+        <Outlet alert={alert}/>
       </main>
       <Footer theme={mode}/>
     </>
