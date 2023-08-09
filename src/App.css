@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
-body{font-family:'Nunito', sans-serif}
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+body{font-family: 'Jost', sans-serif;}
 
 header{z-index:10}
 #main{min-height:80vh}
@@ -17,8 +17,9 @@ header{z-index:10}
 .theme-switch input:checked + .slider:before{left:calc(100% - (var(--size-of-icon,1.4rem) + var(--slider-offset,0.3rem)));background:#303136;box-shadow:inset -3px -2px 5px -2px #8983f7,inset -10px -4px 0 0 #a3dafb}
 
 .form-control{box-shadow:none !important}
-#myText[style^="color:white"]::placeholder{color:#fff}
+#myText[style^="color: white"]::placeholder{color:#fff}
 #form #btn-group .btn:hover{background:inherit; color:inherit}
+#form .btn-info{color: #fff}
 
 #faqAccordion.dark .accordion-button::after{filter:invert(1)}
 #faqAccordion.dark,

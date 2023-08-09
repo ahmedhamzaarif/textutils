@@ -27,7 +27,7 @@ export default function TextForm(props) {
     return(
         <div id="form" style={{color: props.theme==='dark'?'white':'#212529', backgroundColor: props.theme==='dark'?'#212529':'white'}}>
             <h2 className="text-capitalize mb-3">{props.heading}</h2>
-            <textarea id="myText" className="form-control my-3" rows='8' value={text} onChange={(e)=> setText(e.target.value)} placeholder="Enter your text here" style={{color: props.theme==='dark'?'white':'#2b3035', backgroundColor: props.theme==='dark'?'#2b3035':'white', borderColor: props.theme==='dark'?'#252525':'#ced4da'}}></textarea>
+            <textarea id="myText" className="form-control my-3 p-3" rows='8' value={text} onChange={(e)=> setText(e.target.value)} placeholder="Enter your text here" style={{color: props.theme==='dark'?'white':'#2b3035', backgroundColor: props.theme==='dark'?'#2b3035':'white', borderColor: props.theme==='dark'?'#252525':'#ced4da'}}></textarea>
             <div className="mb-3">
                 <button disabled={text.length===0} className="btn btn-info me-2 mb-1" onClick={(handleUpClick)}>Convert to UpperCase</button>
                 <button disabled={text.length===0} className="btn btn-info me-2 mb-1" onClick={handleLowClick}>Convert to LowerCase</button>
@@ -47,7 +47,7 @@ export default function TextForm(props) {
                     <button className={`btn btn-outline-${props.theme==='dark'?'light':'dark'} ms-2 mb-1`}>{(0.008 * text.split(/\s+/).filter((element)=>{return element.length!==0}).length).toFixed(2)} minutes read</button>
                 </span>
             </div>
-            <div className="p-3 my-3" style={{backgroundColor: props.theme==='dark'?'#252525':'white', border: props.theme==='dark'?'1px solid #252525':'1px solid #ced4da'}}>
+            <div className="p-3 my-3" style={{backgroundColor: props.theme==='dark'?'#2b3035':'white', border: props.theme==='dark'?'1px solid #2b3035':'1px solid #ced4da', borderRadius: '0.375rem'}}>
                 <h2>Preview</h2>
                 <p>{text.length>0?text:'Enter text above to preview it'}</p>
             </div>
